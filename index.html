@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Card Game - War</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h1>Card Game: War</h1>
+
+    <!-- Controls -->
+    <div class="controls" role="region" aria-label="Game Controls">
+      <button onclick="shuffleDeck()">Shuffle Deck</button>
+      <button onclick="dealCard()">Deal Card</button>
+      <button onclick="playWar()">Play War</button>
+      <button onclick="resetDeck()">Reset Deck</button>
+    </div>
+
+    <!-- Card Deck Display -->
+    <div id="deck" class="deck" aria-label="Deck"></div>
+
+    <!-- Player Areas -->
+    <div class="players">
+      <div>
+        <h2>Player 1</h2>
+        <div id="player1" class="hand" aria-label="Player 1 Hand"></div>
+      </div>
+      <div>
+        <h2>Player 2</h2>
+        <div id="player2" class="hand" aria-label="Player 2 Hand"></div>
+      </div>
+    </div>
+
+    <!-- Countdown Display -->
+    <div id="countdown" class="countdown hidden" aria-live="assertive">3</div>
+
+    <!-- Victory Banner -->
+    <div id="victory-animation" class="victory-banner hidden" aria-live="polite"></div>
+  </div>
+
+  <!-- Sound Effects -->
+  <audio id="shuffleSound" src="shuffle.mp3" preload="auto"></audio>
+  <audio id="dealSound" src="deal.mp3" preload="auto"></audio>
+  <audio id="winSound" src="win.mp3" preload="auto"></audio>
+
+  <!-- Game Logic -->
+  <script src="script.js"></script>
+</body>
+
+</html>
